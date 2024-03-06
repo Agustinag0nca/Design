@@ -1,24 +1,31 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from './vite.svg'
-import './App.css'
-
+import NavBar from "./components/NavBar";
 function App() {
   const [count, setCount] = useState(0)
 
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+      <div className="App">
+      <NavBar/>
       </div>
-      <h1 className="text-body-secondary">Carrito de Compras</h1>
-    </ >
-  )
+      <h1>Carrito de Compras</h1>
+    </>
+  );
 }
+
+const express = require('express');
+const app = express();
+
+app.use(express.static('public', {
+  setHeaders: (res, path) => {
+    if (path.endsWith('.js') || path.endsWith('.jsx')) {
+      res.setHeader('Content-Type', 'text/javascript');
+    }
+  }
+}));
+
+app.listen(3000, () => {
+  console.log('Servidor en ejecución en el puerto 3000');
+});
+
 
 export default App
