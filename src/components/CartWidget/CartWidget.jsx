@@ -1,4 +1,6 @@
-import cart from './assets/cart.svg'
+import cart from "./assets/cart.svg";
+import NavBar from "./components/NavBar";
+
 const CartWidget = () => {
 return (
 <div>
@@ -6,6 +8,6 @@ return (
 0
 </div>
 )
-}
+};
 
 export default CartWidget

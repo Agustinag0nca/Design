@@ -1,8 +1,8 @@
 import NavBar from "./components/NavBar";
 import { usestate } from"react";
-
 function App() {
-  const [count, setCount] = useState(0);
+  const [count, setCount] = useState(0)
+
   return (
     <>
       <div className="App">
@@ -13,4 +13,4 @@ function App() {
   );
 }
 
-export default App;
+export default App

@@ -1,5 +1,6 @@
-import './ItemCount.css';
-import { useState } from 'react';
+import "./ItemCount.css";
+import NavBar from "./components/NavBar";
+import { useState } from "react";
 
 const ItemCount = ({ stock, initial, onAdd }) => {
     const [quantity, setQuantity] = useState(initial);
@@ -17,10 +18,10 @@ const ItemCount = ({ stock, initial, onAdd }) => {
     };
 
     return (
-    <div className='Counter'>
-        <div className='Controls'>
+    <div className="Counter">
+        <div className="Controls">
         <button className="Button" onClick={decrement}>-</button>
-        <h4 className='Number'>{quantity}</h4>
+        <h4 className="Number">{quantity}</h4>
         <button className="Button" onClick={increment}>+</button>
         </div>
         <div>
