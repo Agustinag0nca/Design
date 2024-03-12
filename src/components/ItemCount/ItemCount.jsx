@@ -1,5 +1,5 @@
 import "./ItemCount.css";
-import NavBar from "./components/NavBar";
+import NavBar from "./components/NavBar.jsx";
 import { useState } from "react";
 
 const ItemCount = ({ stock, initial, onAdd }) => {
