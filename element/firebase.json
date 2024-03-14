@@ -1,0 +1,11 @@
+{
+    "hosting": {
+        "site": "designclub",
+        "public": "public",
+        "provider": "github",
+        "repo": "username/repo-name",
+        "branch": "main",
+        "target": "production",
+        "pr-preview": true
+    }
+}
