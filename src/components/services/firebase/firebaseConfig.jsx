@@ -1,5 +1,8 @@
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
+import { StrictMode } from "react"; 
+import { ReactDOM } from "react-dom";
+import App from "../../../App";
 
 
 
@@ -16,5 +19,15 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
 
+const rootElement = document.getElementById("root");
+ReactDOM.render(
+    <StrictMode>
+        <App />
+    </StrictMode>,
+    rootElement
+);
+
 
 export const db = getFirestore(app)
+
+export default firebaseConfig
