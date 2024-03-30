@@ -6,7 +6,14 @@ import ItemDetailContainer from "./ItemDetailContainer/ItemDetailContainer.jsx";
 
 import { CartProvider} from "./components/CartContext.jsx"
 function App() {
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState(0);
+
+  return (
+    <div className="App">
+      {/* Contenido de la aplicación */}
+    </div>
+  );
+}
 
   return (
       <div className="App">
@@ -24,6 +31,6 @@ function App() {
         </BrowserRouter>
       </div>
   );
-}
+
 
 export default App;
