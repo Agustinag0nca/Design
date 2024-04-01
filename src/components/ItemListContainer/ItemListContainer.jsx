@@ -2,6 +2,8 @@ import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { collection, query, where, getDocs } from 'firebase/firestore';
 import { db } from '../firebase'; // Asegúrate de importar db desde el archivo donde se define la instancia de Firebase
+import firebase from "../firebase";
+
 
 const ItemListContainer = ({ greeting }) => {
     const [products, setProducts] = useState([]);
