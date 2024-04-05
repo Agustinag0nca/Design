@@ -1,8 +1,6 @@
 import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore"; // Correct import for Firestore
-import { StrictMode } from "react";
-import ReactDOM from "react-dom"; // Correct import for ReactDOM
-import App from "../../../App";
+
 
 const firebaseConfig = {
     apiKey: "AIzaSyCyWm9kfS-8WirAotyWDk1fVq1_DAAC8Fc",

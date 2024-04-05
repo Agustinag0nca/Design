@@ -1,18 +1,17 @@
-import { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
-import { collection, query, where, getDocs } from 'firebase/firestore';
-import { db } from '../firebase'; // Asegúrate de importar db desde el archivo donde se define la instancia de Firebase
-import firebase from "../firebase";
-
+import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+import { collection, query, where, getDocs } from "firebase/firestore";
+import { firestore } from "firebase/app";
+import ItemList from "../../ItemList/ItemList.jsx";
 
 const ItemListContainer = ({ greeting }) => {
     const [products, setProducts] = useState([]);
-    const [loading, setLoading] = useState(true);
     const { categoryId } = useParams();
 
     useEffect(() => {
         const fetchProducts = async () => {
             try {
+                const db = firestore();
                 let collectionRef;
                 if (categoryId) {
                     collectionRef = query(collection(db, "products"), where("category", "==", categoryId));
@@ -24,19 +23,19 @@ const ItemListContainer = ({ greeting }) => {
                 setProducts(productsAdapted);
             } catch (error) {
                 console.error("Error fetching products:", error);
-            } finally {
-                setLoading(false);
             }
         };
 
         fetchProducts();
-    }, [categoryId]); 
+    }, [categoryId]);
 
     return (
         <div>
             <h1>{greeting}</h1>
+            <ItemList products={products} />
         </div>
     );
 };
 
 export default ItemListContainer;
+

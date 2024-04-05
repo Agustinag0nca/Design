@@ -4,9 +4,11 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import NavBar from "./components/NavBar.jsx";
 import ItemListContainer from "./components/ItemListContainer/ItemListContainer.jsx";
 import ItemDetailContainer from "./ItemDetailContainer/ItemDetailContainer.jsx";
-import Cart from "./components/Cart/Cart.jsx"; // Importa el componente Cart
+import Cart from "./components/Cart/CartItem.jsx"; // Importa el componente Cart
 import express from "express"; 
-import { CartProvider } from "./components/CartContext.jsx";
+import { CartProvider } from "./components/CartContext/CartContext.jsx";
+import firebase from 'firebase/app';
+import 'firebase/firestore';
 
 
 const App = () => {

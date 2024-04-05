@@ -7,7 +7,7 @@ export const CartContext = createContext({
     clearCart: () => {}
 });
 
-const CartProvider = ({ children }) => {
+export const CartProvider = ({ children }) => {
     const [cart, setCart] = useState([]);
 
     const addItem = (item, quantity) => {
@@ -38,4 +38,3 @@ const CartProvider = ({ children }) => {
     );
 };
 
-export default CartProvider;

@@ -39,3 +39,10 @@ export const getProductById = (productId) => {
     });
 };
 
+export const getProductsByCategory = (category) => {
+    return new Promise((resolve) => {
+        setTimeout(() => {
+            resolve(products.filter(product => product.category === category));
+        }, 2000);
+    });
+};
